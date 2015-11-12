@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="darius">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Angular workshop</title>
+    <!-- build:js js/app/libs.min.js -->
+    <script src="../node_modules/underscore/underscore-min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-route/angular-route.min.js"></script>
+    <!-- endbuild -->
+    <script src="js/app/app.min.js"></script>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <div ng-view></div>
+    <error-messages></error-messages>
+</body>
+</html>
