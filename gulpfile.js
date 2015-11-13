@@ -26,6 +26,9 @@ var usemin = require('gulp-usemin'),
 
 var config = {
     ui: {
+        css: [
+            './src/css/**/*.css'
+        ],
         js: [
             './src/js/**/*.js'
         ],
@@ -166,6 +169,12 @@ gulp.task('watch', function() {
         [ 'compileSoft', 'templates' ]
     );
 
+    gulp.watch(
+        [
+            config.ui.css
+        ],
+        [ 'compileSoft', 'templates', 'css' ]
+    );
 });
 
 gulp.task('compileSoft',['app-js'], function () {
@@ -212,6 +221,14 @@ gulp.task('templates',['mv-files'], function () {
         .pipe(gulp.dest(config.buildDir+'/js/app/'));
 
 });
+
+gulp.task('css',['mv-files'], function () {
+
+    return gulp.src(config.ui.css)
+        .pipe(gulp.dest(config.buildDir+'/css/'));
+
+});
+
 gulp.task('mv-files',function () {
     return gulp.src(config.favIcon)
         .pipe(gulp.dest(config.buildDir));
@@ -223,10 +240,10 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('production', function() {
-    return runSeq('clean','compileHard','templates', 'lintTC', 'plato', 'testBuild');
+    return runSeq('clean','compileHard','templates', 'css', 'lintTC', 'plato', 'testBuild');
 });
 
 
 gulp.task('default',['watch'], function() {
-    return runSeq('clean','compileSoft','templates','connect', 'lint', 'test');
+    return runSeq('clean','compileSoft','templates','css', 'connect', 'lint', 'test');
 });
