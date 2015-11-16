@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('darius')
+angular.module('buras')
     .filter('nice', niceFilter);
 
 function niceFilter() {

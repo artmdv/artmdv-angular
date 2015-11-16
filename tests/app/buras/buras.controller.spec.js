@@ -1,8 +1,8 @@
 "use strict";
 
-describe('Module darius controller - mainCtrl', function() {
+describe('Module buras controller - mainCtrl', function() {
 
-    beforeEach(module('darius'));
+    beforeEach(module('buras'));
 
     var mainCtrl,
         $q,

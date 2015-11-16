@@ -1,14 +1,14 @@
 "use strict";
 
-angular.module('darius', ['ngRoute'])
+angular.module('buras', ['ngRoute'])
     .config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'js/app/darius/darius.html',
+            templateUrl: 'js/app/buras/buras.html',
             controller: 'mainCtrl'
         })
         .when('/next', {
-            templateUrl: 'js/app/darius/next.html',
+            templateUrl: 'js/app/buras/next.html',
             controller: 'mainCtrl'
         })
         .otherwise({

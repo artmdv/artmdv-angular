@@ -1,5 +1,5 @@
 "use strict";
-angular.module('darius')
+angular.module('buras')
     .directive('myName', myNameDirective);
 
 function myNameDirective () {

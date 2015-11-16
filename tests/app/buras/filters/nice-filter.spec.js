@@ -2,7 +2,7 @@ describe('Filters', function()
 {
 
     var $filter;
-    beforeEach(module('darius'));
+    beforeEach(module('buras'));
 
     beforeEach(inject(function(_$filter_){
         $filter = _$filter_;

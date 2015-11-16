@@ -1,12 +1,12 @@
 "use strict";
 
-angular.module('darius')
+angular.module('buras')
     .factory('profile', profileService);
 
 function profileService($q, $timeout) {
 
     var nameModel = {
-        name: 'Darius'
+        name: 'Artūras'
     };
 
 

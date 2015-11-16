@@ -2,7 +2,7 @@
 
 describe('Directive: my name', function () {
 
-    beforeEach(module('darius'));
+    beforeEach(module('buras'));
 
     var element,
         scope;

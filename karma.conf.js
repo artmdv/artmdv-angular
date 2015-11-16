@@ -8,7 +8,7 @@ module.exports = function(config) {
             'bower_components/angular-route/angular-route.js',
             'node_modules/underscore/underscore.js',
             'src/js/app/app.js',
-            'src/js/app/darius/**/*.js',
+            'src/js/app/buras/**/*.js',
             'src/js/**/*.html',
            // 'src/js/common/**/*.js',
             'tests/**/*.js'

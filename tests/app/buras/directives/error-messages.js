@@ -2,7 +2,7 @@
 
 describe('Directive: error messages', function () {
 
-    beforeEach(module('darius'));
+    beforeEach(module('buras'));
 
     var element,
         $rootScope,

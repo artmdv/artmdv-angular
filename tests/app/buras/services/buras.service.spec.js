@@ -1,8 +1,8 @@
 "use strict";
 
-describe('Module darius Service profile', function () {
+describe('Module buras Service profile', function () {
 
-    beforeEach(module('darius'));
+    beforeEach(module('buras'));
 
     var profileService,
         $q,
@@ -20,11 +20,11 @@ describe('Module darius Service profile', function () {
         spyOn(profileService, "getInfo").andReturn(deferred.promise);
         var info = profileService.getInfo();
 
-        deferred.resolve({name:'Darius'});
+        deferred.resolve({name:'Artūras'});
 
         expect(profileService.getInfo).toHaveBeenCalled();
 
-        expect(info.$$state.value.name).toBe('Darius');
+        expect(info.$$state.value.name).toBe('Artūras');
 
     });
 
@@ -32,7 +32,7 @@ describe('Module darius Service profile', function () {
         var info = profileService.getInfo();
         $timeout.flush();
 
-        expect(info.$$state.value.name).toBe('Darius');
+        expect(info.$$state.value.name).toBe('Artūras');
     });
 
     it('should Throw error if name not set ', function () {

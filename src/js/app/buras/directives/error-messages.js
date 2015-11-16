@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module( 'darius' )
+angular.module( 'buras' )
     .directive( 'errorMessages', errorMessagesDirective );
 
 function errorMessagesDirective($rootScope, $timeout) {

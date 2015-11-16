@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('darius')
+angular.module('buras')
     .controller('mainCtrl', mainCtrl);
 
 function mainCtrl(profile, $timeout, $rootScope) {
