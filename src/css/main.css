@@ -1722,6 +1722,12 @@
 			width: 100%;
 		}
 
+		.image.quarter {
+			margin: 0 auto 2em auto;
+			display: block;
+			width: 25%;
+		}
+
 		.image.featured {
 			display: block;
 			width: 100%;
