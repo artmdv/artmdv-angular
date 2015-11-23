@@ -23,6 +23,7 @@
     <script src="js/app/app.min.js"></script>
 </head>
 <body>
+
 <div id="header">
 
     <div class="top">
@@ -37,15 +38,14 @@
         <!-- Nav -->
         <nav id="nav">
             <ul>
-                <li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a>
+                <li><a href="/" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a>
                 </li>
-                <li><a href="#astrophotography" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Astrophotography</span></a>
-                <li><a href="#modeling" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Modeling</span></a>
+                <li><a href="/astrophotography" id="portfolio-link" class="skel-layers-ignoreHref"><span
+                        class="icon fa-th">Astrophotography</span></a>
+                <li><a href="/modeling" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Modeling</span></a>
                 </li>
-                <li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span
+                <li><a href="/about" id="about-link" class="skel-layers-ignoreHref"><span
                         class="icon fa-user">About Me</span></a></li>
-                <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a>
-                </li>
             </ul>
         </nav>
 
@@ -55,25 +55,22 @@
 
         <!-- Social Icons -->
         <ul class="icons">
-            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-            <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+            <li><a href="https://github.com/burscikas/burscikas-angular" class="icon fa-github"><span class="label">Github</span></a></li>
+            <li><a href="mailto:arturas.medvedevas@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
         </ul>
 
     </div>
 
 </div>
-<div ng-view></div>
-<error-messages></error-messages>
+<div id="main" ng-view>
 
+</div>
 <div id="footer">
-
     <!-- Copyright -->
     <ul class="copyright">
         <li>&copy; Artūras Medvedevas. All rights reserved.</li>
         <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
     </ul>
-
 </div>
 </body>
 </html>
