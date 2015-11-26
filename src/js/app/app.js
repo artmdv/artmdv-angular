@@ -8,15 +8,15 @@ angular.module('buras', ['ngRoute'])
                 controller: 'mainController'
             })
             .when('/astrophotography', {
-                templateUrl: 'js/app/buras/astrophotography/ap.html',
+                templateUrl: 'js/app/buras/Astrophotography/ap.html',
                 controller: 'apController'
             })
             .when('/modeling', {
-                templateUrl: 'js/app/buras/modeling/modeling.html',
+                templateUrl: 'js/app/buras/Modeling/modeling.html',
                 controller: 'modelingController'
             })
             .when('/about', {
-                templateUrl: 'js/app/buras/about/about.html',
+                templateUrl: 'js/app/buras/About/about.html',
                 controller: 'aboutController'
             })
             .otherwise({
