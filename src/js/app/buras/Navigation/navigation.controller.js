@@ -1,3 +1,8 @@
-/**
- * Created by artur on 24/11/2015.
- */
+"use strict";
+
+angular.module('buras')
+    .controller('navigationController', navigationController);
+
+function navigationController() {
+
+}
