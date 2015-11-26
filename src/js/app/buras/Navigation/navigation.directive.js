@@ -5,7 +5,7 @@ angular.module( 'buras' )
 
 function siteNavigationDirective () {
     return {
-        templateUrl: 'js/app/buras/navigation/navigation.html',
+        templateUrl: 'js/app/buras/Navigation/navigation.html',
         replace: true
     };
 }
