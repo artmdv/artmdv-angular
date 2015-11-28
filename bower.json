@@ -1,10 +1,10 @@
 {
-  "name": "AngularWorkshop",
+  "name": "burscikas-angular",
   "version": "0.0.1",
   "authors": [
-    "Darius Laurinčikas"
+    "Artūras Medvedevas"
   ],
-  "description": "Angular Workshop",
+  "description": "Artūras Medvedevas personal web",
   "private": true,
   "dependencies": {
     "angular": "^1.2.24",

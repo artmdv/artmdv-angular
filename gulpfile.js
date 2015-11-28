@@ -1,5 +1,7 @@
 var gulp = require('gulp'),
     runSeq = require('run-sequence'),
+    templates = require('gulp-angular-templatecache'),
+    htmlmin = require('gulp-htmlmin'),
     bower = require('gulp-bower');
 
 var eslint = require('gulp-eslint'),
@@ -47,7 +49,8 @@ var config = {
         ],
         index: './src/index.html',
         maps: './maps/',
-        appMinName: 'app.min.js'
+        appMinName: 'app.min.js',
+        templatesMinName : 'templates.min.js',
     },
     favIcon: './src/favicon.ico',
     buildDir: './build/',
@@ -168,7 +171,7 @@ gulp.task('watch', function() {
         [
             config.ui.index
         ],
-        ['lint','compileSoft','templates']
+        ['lint','compileSoft','h']
     );
 
     gulp.watch(
@@ -252,11 +255,27 @@ gulp.task('app-js', function () {
         .pipe(gulp.dest(config.buildDir+'/js/app/'))
 });
 
-gulp.task('templates',['mv-files'], function () {
+gulp.task('templates', function () {
+    var htmlmin_options = {
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+        removeComments: true, // Only if you don't use comment directives
+        removeEmptyAttributes: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true
+    };
+    var angular_templatecache_options = {
+        standalone: true,
+        root: 'js'
+    };
 
     return gulp.src(config.ui.templates)
-        .pipe(gulp.dest(config.buildDir+'/js/app/'));
-
+        .pipe(htmlmin(htmlmin_options))
+        .pipe(templates(angular_templatecache_options))
+        .pipe(concat(config.ui.templatesMinName))
+        .pipe(gulp.dest(config.buildDir + 'js/'));
 });
 
 gulp.task('css',['mv-files'], function () {

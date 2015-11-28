@@ -4,19 +4,19 @@ angular.module('buras', ['ngRoute'])
     .config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'js/app/buras/buras.html',
+                templateUrl: 'js/buras/buras.html',
                 controller: 'mainController'
             })
             .when('/astrophotography', {
-                templateUrl: 'js/app/buras/astrophotography/ap.html',
+                templateUrl: 'js/buras/astrophotography/ap.html',
                 controller: 'apController'
             })
             .when('/modeling', {
-                templateUrl: 'js/app/buras/modeling/modeling.html',
+                templateUrl: 'js/buras/modeling/modeling.html',
                 controller: 'modelingController'
             })
             .when('/about', {
-                templateUrl: 'js/app/buras/about/about.html',
+                templateUrl: 'js/buras/about/about.html',
                 controller: 'aboutController'
             })
             .otherwise({
