@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     runSeq = require('run-sequence'),
     templates = require('gulp-angular-templatecache'),
     htmlmin = require('gulp-htmlmin'),
-    bower = require('gulp-bower');
+    bower = require('gulp-bower'),
+    replace = require('gulp-replace');
 
 var eslint = require('gulp-eslint'),
     plato = require('gulp-plato'),
@@ -311,16 +312,27 @@ gulp.task('mv-files',function () {
         .pipe(gulp.dest(config.buildDir));
 });
 
+gulp.task('prodApiStr', function () {
+    gulp.src(config.buildDir+'/js/app/' + config.ui.appMinName)
+        .pipe(replace('[[API_CONNECTION_STRING]]', 'api.arturas.space'))
+        .pipe(gulp.dest(config.buildDir+'/js/app'));
+});
+
+gulp.task('devApiStr', function () {
+    gulp.src(config.buildDir+'/js/app/' + config.ui.appMinName)
+        .pipe(replace('[[API_CONNECTION_STRING]]', 'localhost:5004'))
+        .pipe(gulp.dest(config.buildDir+'/js/app'));
+});
 
 gulp.task('clean', function(cb) {
     del(['./build/*', './coverage/*', './report/*'], cb);
 });
 
 gulp.task('production', function() {
-    return runSeq('clean','compileHard','templates', 'css', 'images', 'fonts', 'sass', 'lintTC', 'plato', 'testBuild');
+    return runSeq('clean','compileHard','templates', 'css', 'images', 'fonts', 'sass', 'prodApiStr', 'lintTC', 'plato', 'testBuild');
 });
 
 
 gulp.task('default',['watch'], function() {
-    return runSeq('clean','compileSoft','templates','css', 'images', 'fonts', 'sass', 'connect', 'lint', 'test');
+    return runSeq('clean','compileSoft','templates','css', 'images', 'fonts', 'sass', 'devApiStr', 'connect', 'lint', 'test');
 });
