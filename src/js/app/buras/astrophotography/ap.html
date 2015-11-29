@@ -5,64 +5,20 @@
         <header>
             <h2>My astro photos</h2>
         </header>
-        <div>
-            {{errors}}
+        <div class="content">
+            <ng-gallery images="images"></ng-gallery>
         </div>
-        <div ng-repeat="image in apList.model.images">
-            image: {{image.title}}
-        </div>
-        <div class="row">
-            <div class="4u 12u$(mobile)">
-                <article class="item">
-                    <a href="#" class="image fit"><img src="images/ap/NGC6995_thumb.jpg" alt=""/></a>
-                    <header>
-                        <h3>NGC 6995 Eastern Veil nebula</h3>
-                    </header>
-                </article>
-                <article class="item">
-                    <a href="#" class="image fit"><img src="images/ap/M16_thumb.jpg" alt=""/></a>
-                    <header>
-                        <h3>M16 Eagle nebula</h3>
-                    </header>
-                </article>
-            </div>
-            <div class="4u 12u$(mobile)">
-                <article class="item">
-                    <a href="#" class="image fit"><img src="images/ap/M51_thumb.jpg" alt=""/></a>
-                    <header>
-                        <h3>M51 Whirlpool galaxy</h3>
-                    </header>
-                </article>
-                <article class="item">
-                    <a href="#" class="image fit"><img src="images/ap/M57_thumb.jpg" alt=""/></a>
-                    <header>
-                        <h3>M57 Ring nebula</h3>
-                    </header>
-                </article>
-            </div>
-            <div class="4u$ 12u$(mobile)">
-                <article class="item">
-                    <a href="#" class="image fit"><img src="images/ap/M81_M82_thumb.jpg" alt=""/></a>
-                    <header>
-                        <h3>M81 Bode's galaxy and M82 Cigar galaxy</h3>
-                    </header>
-                </article>
-                <article class="item">
-                    <a href="#" class="image fit"><img src="images/ap/milky-way_thumb.jpg" alt=""/></a>
-                    <header>
-                        <h3>Milky Way</h3>
-                    </header>
-                </article>
-            </div>
-            <div class="4u$ 12u$(mobile)">
-                <article class="item">
-                    <a href="#" class="image fit"><img src="images/ap/NGC7331_thumb.jpg" alt=""/></a>
-                    <header>
-                        <h3>NGC 7331 and friends</h3>
-                    </header>
-                </article>
-            </div>
-        </div>
+
+        <!--<div class="row">-->
+            <!--<div class="4u 12u$(mobile)" ng-repeat="image in images track by $index">-->
+                <!--<article class="item">-->
+                    <!--<a href="#" class="image fit"><img ng-src="images/ap/{{image.Thumbnail}}" alt=""/></a>-->
+                    <!--<header>-->
+                        <!--<h3>{{image.Title}}</h3>-->
+                    <!--</header>-->
+                <!--</article>-->
+            <!--</div>-->
+        <!--</div>-->
 
     </div>
 </section>

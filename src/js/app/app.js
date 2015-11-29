@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('buras', ['ngRoute', 'templates'])
+angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'jkuri.gallery'])
     .config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
