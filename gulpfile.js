@@ -272,6 +272,9 @@ gulp.task('templates', function () {
     };
 
     return gulp.src(config.ui.templates)
+        .pipe(htmlmin(htmlmin_options))
+        .pipe(templates(angular_templatecache_options))
+        .pipe(concat(config.ui.templatesMinName))
         .pipe(gulp.dest(config.buildDir + 'js/'));
 });
 

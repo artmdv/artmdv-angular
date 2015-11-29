@@ -5,7 +5,12 @@
         <header>
             <h2>My astro photos</h2>
         </header>
-
+        <div>
+            {{errors}}
+        </div>
+        <div ng-repeat="image in apList.model.images">
+            image: {{image.title}}
+        </div>
         <div class="row">
             <div class="4u 12u$(mobile)">
                 <article class="item">
