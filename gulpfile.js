@@ -60,6 +60,7 @@ var config = {
 
 gulp.task('bower',function() {
     bower();
+    bower({ cmd: 'update'});
 });
 
 gulp.task( 'connect', function() {
