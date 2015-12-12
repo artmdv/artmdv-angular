@@ -1,7 +1,7 @@
 "use strict";
 
-angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'jkuri.gallery'])
-    .config(function ($routeProvider, $locationProvider) {
+angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'jkuri.gallery', 'satellizer'])
+    .config(function ($routeProvider, $locationProvider, $authProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'js/buras/buras.html',
@@ -22,6 +22,10 @@ angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'jkuri.gallery'])
             .otherwise({
                 redirectTo: '/'
             });
+
+        $authProvider.facebook({
+            clientId: '510836799098726'
+        });
 
         $locationProvider.html5Mode(true);
     });
