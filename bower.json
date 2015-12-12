@@ -12,8 +12,7 @@
     "angular-mocks": "^1.2.26",
     "angular-cookies": "^1.2.24",
     "angular-resource": "^1.4.8",
-    "ngGallery-buras": "",
-    "satellizer": "~0.13.1"
+    "ngGallery-buras": ""
   },
   "resolutions": {
     "angular": "^1.2.24"

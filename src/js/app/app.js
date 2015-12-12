@@ -19,6 +19,10 @@ angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'jkuri.gallery', 
                 templateUrl: 'js/buras/about/about.html',
                 controller: 'aboutController'
             })
+            .when('/login', {
+                templateUrl: 'js/buras/login/login.html',
+                controller: 'loginController'
+            })
             .otherwise({
                 redirectTo: '/'
             });
