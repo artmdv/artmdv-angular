@@ -219,7 +219,7 @@ gulp.task('watch', function() {
     );
 });
 
-gulp.task('compileSoft',['app-js'], function () {
+gulp.task('compileSoft',['app-js-dev'], function () {
     return gulp.src(config.ui.index)
         .pipe(usemin({
             css: [minifyCss(), 'concat'],
@@ -229,7 +229,7 @@ gulp.task('compileSoft',['app-js'], function () {
         .pipe(gulp.dest(config.buildDir));
 });
 
-gulp.task('compileHard', ['app-js'], function () {
+gulp.task('compileHard', ['app-js-prod'], function () {
     return gulp.src(config.ui.index)
         .pipe(usemin({
             css: [minifyCss(), 'concat'],
@@ -240,8 +240,9 @@ gulp.task('compileHard', ['app-js'], function () {
         .pipe(gulp.dest(config.buildDir));
 });
 
-gulp.task('app-js', function () {
+gulp.task('app-js-prod', function () {
     gulp.src(config.ui.js)
+        .pipe(replace('[[API_CONNECTION_STRING]]', 'api.arturas.space'))
         .pipe(sourcemaps.init())
         .pipe(ngAnnotate({
             remove: true,
@@ -251,6 +252,23 @@ gulp.task('app-js', function () {
         }))
         .pipe(concat(config.ui.appMinName))
         .pipe(uglify())
+        .pipe(sourcemaps.write(config.ui.maps, {
+            includeContent: true
+        }))
+        .pipe(gulp.dest(config.buildDir+'/js/app/'))
+});
+
+gulp.task('app-js-dev', function () {
+    gulp.src(config.ui.js)
+        .pipe(replace('[[API_CONNECTION_STRING]]', 'localhost:5004'))
+        .pipe(sourcemaps.init())
+        .pipe(ngAnnotate({
+            remove: true,
+            add: true,
+            single_quotes: true,
+            dynamic: true
+        }))
+        .pipe(concat(config.ui.appMinName))
         .pipe(sourcemaps.write(config.ui.maps, {
             includeContent: true
         }))
@@ -313,27 +331,15 @@ gulp.task('mv-files',function () {
         .pipe(gulp.dest(config.buildDir));
 });
 
-gulp.task('prodApiStr', function () {
-    gulp.src(config.buildDir+'/js/app/' + config.ui.appMinName)
-        .pipe(replace('[[API_CONNECTION_STRING]]', 'api.arturas.space'))
-        .pipe(gulp.dest(config.buildDir+'/js/app'));
-});
-
-gulp.task('devApiStr', function () {
-    gulp.src(config.buildDir+'/js/app/' + config.ui.appMinName)
-        .pipe(replace('[[API_CONNECTION_STRING]]', 'localhost:5004'))
-        .pipe(gulp.dest(config.buildDir+'/js/app'));
-});
-
 gulp.task('clean', function(cb) {
     del(['./build/*', './coverage/*', './report/*'], cb);
 });
 
 gulp.task('production', function() {
-    return runSeq('clean','compileHard','templates', 'css', 'images', 'fonts', 'sass', 'prodApiStr', 'lintTC', 'plato', 'testBuild');
+    return runSeq('clean','compileHard','templates', 'css', 'images', 'fonts', 'sass', 'lintTC', 'plato', 'testBuild');
 });
 
 
 gulp.task('default',['watch'], function() {
-    return runSeq('clean','compileSoft','templates','css', 'images', 'fonts', 'sass', 'devApiStr', 'connect', 'lint', 'test');
+    return runSeq('clean','compileSoft','templates','css', 'images', 'fonts', 'sass', 'connect', 'lint', 'test');
 });

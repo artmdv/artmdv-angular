@@ -3,6 +3,7 @@
 angular.module('buras')
     .controller('modelingController', modelingController);
 
-function modelingController($rootScope) {
-
+function modelingController($scope, apiService) {
+    var vm = $scope;
+    vm.images = apiService.modelList();
 }

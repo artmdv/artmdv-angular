@@ -5,5 +5,5 @@ angular.module('buras')
 
 function apController($scope, apiService) {
     var vm = $scope;
-    vm.images = apiService.images;
+    vm.images = apiService.apList();
 }
