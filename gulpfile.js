@@ -44,6 +44,9 @@ var config = {
         js: [
             './src/js/**/*.js'
         ],
+        templatejs: [
+            './src/templatejs/**/*.*'
+        ],
         templates: [
             './src/js/app/**/*.html',
             '!./src/index.html'
@@ -189,6 +192,12 @@ gulp.task('watch', function() {
         ],
         [ 'compileSoft', 'templates' ]
     );
+    gulp.watch(
+        [
+            config.ui.templatejs
+        ],
+        [ 'compileSoft', 'templates', 'templatejs' ]
+    );
 
     gulp.watch(
         [
@@ -305,6 +314,13 @@ gulp.task('css',['mv-files'], function () {
 
 });
 
+gulp.task('templatejs',['mv-files'], function () {
+
+    return gulp.src(config.ui.templatejs)
+        .pipe(gulp.dest(config.buildDir+'/templatejs/'));
+
+});
+
 gulp.task('fonts',['mv-files'], function () {
 
     return gulp.src(config.ui.fonts)
@@ -336,10 +352,10 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('production', function() {
-    return runSeq('clean','compileHard','templates', 'css', 'images', 'fonts', 'sass', 'lintTC', 'plato', 'testBuild');
+    return runSeq('clean','compileHard','templates', 'templatejs', 'css', 'images', 'fonts', 'sass', 'lintTC', 'plato', 'testBuild');
 });
 
 
 gulp.task('default',['watch'], function() {
-    return runSeq('clean','compileSoft','templates','css', 'images', 'fonts', 'sass', 'connect', 'lint', 'test');
+    return runSeq('clean','compileSoft','templates','templatejs','css', 'images', 'fonts', 'sass', 'connect', 'lint', 'test');
 });
