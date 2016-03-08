@@ -3,7 +3,9 @@
 angular.module('buras').
     factory('apiService', apiService);
 
-function apiService($resource){
+function apiService($http, Upload, $timeout){
+    var baseAddres = 'http://[[API_CONNECTION_STRING]]/';
+
     var apList = function(){
         return get('Astrophotos');
     };
@@ -16,14 +18,35 @@ function apiService($resource){
         return get('Models');
     };
 
-    function get(string)
+    function get(endpoint, success)
     {
-        return $resource('http://[[API_CONNECTION_STRING]]/' + string).query();
+        $http.get(baseAddres + endpoint).then(function(response){success(response.data); });
     }
+
+    var post = function(endpoint, dto, success)
+    {
+        var upload = Upload.upload({
+            url: baseAddres + endpoint,
+            data: dto
+        });
+
+        upload.then(function (response) {
+            $timeout(function () {
+                success(response.data);
+            });
+        }
+        //    , function (response) {
+        //    if (response.status > 0)
+        //        $scope.errorMsg = response.status + ': ' + response.data;
+        //}
+        );
+    };
 
     return {
         apList: apList,
         model: model,
-        modelList: modelList
+        modelList: modelList,
+        post: post,
+        get: get
     };
 }

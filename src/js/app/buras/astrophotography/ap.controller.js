@@ -5,5 +5,5 @@ angular.module('buras')
 
 function apController($scope, apiService) {
     var vm = $scope;
-    vm.images = apiService.apList();
+    apiService.get("v2/Images?tag=astrophotography", function(data){vm.images = data; });
 }
