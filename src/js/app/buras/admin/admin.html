@@ -2,7 +2,7 @@
     <h2>Administration</h2>
 
     <div ng-show="responseData">
-        <a href="responseData.links.ImageContent">
+        <a href="{{responseData.links.ImageContent}}">
             <img ng-src="{{responseData.links.ThumbnailContent}}"/>
         </a>
         <p>{{responseData.ForumPost}}</p>

@@ -15,6 +15,10 @@ angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'ngFileUpload'])
                 templateUrl: 'js/buras/modeling/modeling.html',
                 controller: 'modelingController'
             })
+            .when('/imageDetails/:id', {
+                templateUrl: 'js/buras/imageDetails/imageDetails.html',
+                controller: 'imageDetailsController'
+            })
             .when('/about', {
                 templateUrl: 'js/buras/about/about.html',
                 controller: 'aboutController'

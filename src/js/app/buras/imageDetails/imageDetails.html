@@ -1,0 +1,11 @@
+<div class="container" ng-controller="imageDetailsController as imageDetails">
+    <h2 class="text-center">{{image.Image.Title}}</h2>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <a href="{{image.links.ImageContent}}">
+                <img ng-src="{{image.links.ImageContent}}" alt="{{image.Image.Title}}" class="img-responsive">
+            </a>
+        </div>
+    </div>
+    <h4 class="text-center">{{image.Image.Description}}</h4>
+</div>
