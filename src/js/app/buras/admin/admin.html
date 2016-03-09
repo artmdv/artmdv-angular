@@ -1,21 +1,51 @@
 <div ng-controller="adminController as admin" class="container">
-    <header>
-        <h2>UPLOAD Images</h2>
-    </header>
+    <h2>Administration</h2>
 
-        <div ng-show="responseData"><img ng-src="responseData.Image.links.ThumbnailContent"/><div>{{responseData.ForumPost}}</div></div>
-    <form method="post" enctype="multipart/form-data" ng-submit="uploadImage()">
-        <div class="12u$"><input type="file" name="file" ngf-select ng-model="model.file" enctype="multipart/form-data" id="file"/></div>
-        <div class="12u$"><input type="text" name="title" id="title" ng-model="model.title" placeholder="Title"/></div>
-        <div class="6u 12u$(mobile)">
-            <textarea name="description" id="description" ng-model="model.description" placeholder="Description"></textarea>
-        </div>
-        <div class="6u 12u$(mobile)">
-            <textarea name="tags" id="tags" ng-model="model.tags" placeholder="Tags"></textarea>
-        </div>
-        <div class="6u 12u$(mobile)"><input type="password" ng-model="model.password" name="password" value="" placeholder="password"/></div>
-        <div class="12u$">
-            <input type="submit" value="submit" />
-        </div>
+    <div ng-show="responseData">
+        <a href="responseData.links.ImageContent">
+            <img ng-src="{{responseData.links.ThumbnailContent}}"/>
+        </a>
+        <p>{{responseData.ForumPost}}</p>
+    </div>
+
+    <form method="post" enctype="multipart/form-data" ng-submit="uploadImage()" class="form-horizontal">
+        <fieldset>
+            <legend>Image upload</legend>
+            <div class="form-group">
+                <label for="file" class="col-lg-2">File</label>
+                <div class="col-lg-10">
+                    <input class="form-control" type="file" name="file" ngf-select ng-model="model.file" enctype="multipart/form-data" id="file"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="file" class="col-lg-2">Title</label>
+                <div class="col-lg-10">
+                    <input class="form-control" type="text" name="title" id="title" ng-model="model.title" placeholder="Title"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="file" class="col-lg-2">Description</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" rows="3" name="description" id="description" ng-model="model.description" placeholder="Description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="file" class="col-lg-2">Description</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" rows="3" name="tags" id="tags" ng-model="model.tags" placeholder="Tags"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="file" class="col-lg-2">Title</label>
+                <div class="col-lg-10">
+                    <input class="form-control" type="password" name="password" id="password" ng-model="model.password" placeholder="Password"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <input type="submit" class="btn btn-primary" value="Submit" />
+                </div>
+            </div>
+        </fieldset>
     </form>
 </div>

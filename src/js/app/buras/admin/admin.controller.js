@@ -6,7 +6,7 @@ angular.module('buras')
 function adminController($scope, apiService, $sce) {
     var vm = $scope;
     vm.apiAddress = $sce.trustAsResourceUrl('http://[[API_CONNECTION_STRING]]/v2/Images');
-    var responseData = "asdf";
+    var responseData;
 
     var successCallback = function(data){
         vm.responseData = data;

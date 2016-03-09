@@ -5,5 +5,5 @@ angular.module('buras')
 
 function modelingController($scope, apiService) {
     var vm = $scope;
-    vm.images = apiService.modelList();
+    vm.images = apiService.get("v2/Images?tag=modeling", function(data){vm.images = data; });
 }

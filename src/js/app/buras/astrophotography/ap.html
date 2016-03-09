@@ -1,12 +1,11 @@
-<!-- Portfolio -->
-<section id="portfolio" class="two" ng-controller="apController as ap">
-    <div class="container">
-
-        <header>
-            <h2>My astro photos</h2>
-        </header>
-        <div class="content">
-            <ng-gallery images="images"></ng-gallery>
+<div class="container" ng-controller="apController as ap">
+    <h2 class="text-center">My astro photos</h2>
+    <div ng-repeat="image in images">
+        <div class="col-md-3">
+            <h4>{{image.Image.Title}}</h4>
+            <a href="{{image.links.ImageContent}}">
+                <img ng-src="{{image.links.ThumbnailContent}}" class="img-thumbnail" alt="{{image.Image.Title}}">
+            </a>
         </div>
     </div>
-</section>
+</div>

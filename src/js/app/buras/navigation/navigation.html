@@ -1,38 +1,41 @@
-<div id="header" ng-controller="navigationController as navigation">
-
-    <div class="top">
-
-        <!-- Logo -->
-        <div id="logo">
-            <span class="image avatar48"><img src="images/avatar.jpg" alt=""/></span>
-
-            <h1 id="title">Artūras Medvedevas</h1>
-        </div>
-
-        <!-- Nav -->
-        <nav id="nav">
-            <ul>
-                <li><a href="/" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a>
-                </li>
-                <li><a href="/astrophotography" id="portfolio-link" class="skel-layers-ignoreHref"><span
-                        class="icon fa-th">Astrophotography</span></a>
-                <li><a href="/modeling" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Modeling</span></a>
-                </li>
-                <li><a href="/about" id="about-link" class="skel-layers-ignoreHref"><span
-                        class="icon fa-user">About Me</span></a></li>
-            </ul>
-        </nav>
-
-    </div>
-
-    <div class="bottom">
-
-        <!-- Social Icons -->
-        <ul class="icons">
-            <li><a href="https://github.com/artmdv/artmdv-angular" class="icon fa-github"><span class="label">Github</span></a></li>
-            <li><a href="mailto:arturas.medvedevas@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
-        </ul>
-
-    </div>
-
+<div class="col-md-2" ng-controller="navigationController as navigation">
+    <ul class="nav nav-pills nav-stacked">
+        <li>
+            <a href="mailto:arturas.medvedevas@gmail.com">
+                <div class="">
+                    <img src="images/avatar.jpg" alt="" class="img-responsive"/>
+                </div>
+                <p>Artūras Medvedevas</p>
+            </a>
+        </li>
+        <li>
+            <a href="/" id="top-link">
+                <i class="fa fa-home"></i>
+                <span>Intro</span>
+            </a>
+        </li>
+        <li>
+            <a href="/astrophotography" class="skel-layers-ignoreHref">
+                <i class="fa fa-th"></i>
+                <span>Astrophotography</span>
+            </a>
+        <li>
+            <a href="/modeling" class="skel-layers-ignoreHref">
+                <i class="fa fa-th"></i>
+                <span>Modeling</span>
+            </a>
+        </li>
+        <li>
+            <a href="/about" class="skel-layers-ignoreHref">
+                <i class="fa fa-user"></i>
+                <span>About Me</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/artmdv/artmdv-angular">
+                <i class="fa fa-github"></i>
+                <span class="label">Github</span>
+            </a>
+        </li>
+    </ul>
 </div>

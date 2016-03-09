@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'jkuri.gallery', 'ngFileUpload'])
+angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'ngFileUpload'])
     .config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
