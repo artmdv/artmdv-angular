@@ -1,9 +1,9 @@
-<div class="container" ng-controller="apController as ap">
-    <h2 class="text-center">My astro photos</h2>
+<div class="container" ng-controller="imagesController as images">
+    <h2 class="text-center">{{tag | uppercase}}</h2>
     <div ng-repeat="image in images">
         <div class="col-md-3">
             <h4>{{image.Image.Title}}</h4>
-            <a href="imageDetails/{{image.Image.Id}}">
+            <a href="images/{{tag}}/{{image.Image.Id}}">
                 <img ng-src="{{image.links.ThumbnailContent}}" class="img-thumbnail" alt="{{image.Image.Title}}">
             </a>
         </div>

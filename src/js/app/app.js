@@ -7,17 +7,13 @@ angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'ngFileUpload'])
                 templateUrl: 'js/buras/buras.html',
                 controller: 'mainController'
             })
-            .when('/astrophotography', {
-                templateUrl: 'js/buras/astrophotography/ap.html',
-                controller: 'apController'
+            .when('/images/:tag', {
+                templateUrl: 'js/buras/images/images.html',
+                controller: 'imagesController'
             })
-            .when('/modeling', {
-                templateUrl: 'js/buras/modeling/modeling.html',
-                controller: 'modelingController'
-            })
-            .when('/imageDetails/:id', {
-                templateUrl: 'js/buras/imageDetails/imageDetails.html',
-                controller: 'imageDetailsController'
+            .when('/images/:tag/:id', {
+                templateUrl: 'js/buras/images/details/details.html',
+                controller: 'detailsController'
             })
             .when('/about', {
                 templateUrl: 'js/buras/about/about.html',
