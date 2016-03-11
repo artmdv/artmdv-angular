@@ -1,12 +1,6 @@
 <div class="container" ng-controller="editImageController as editImage">
     <h2 class="text-center">{{image.Image.Title}}</h2>
 
-    <div ng-show="responseData">
-        <a href="Images/{{responseData.links.ImageContent}}">
-            Success
-        </a>
-    </div>
-
     <img ng-src="{{image.links.ThumbnailContent}}" alt="image.Image.Title" class="img-thumbnail center-block"/>
     <h4 class="text-center">{{image.Image.Description}}</h4>
     <form method="put" enctype="multipart/form-data" ng-submit="updateImage()" class="form-horizontal">

@@ -18,7 +18,7 @@ function editImageController($scope, $routeParams, apiService) {
     };
 
     var successCallback = function(data){
-        vm.responseData = data;
+        vm.image.Image = data;
     };
 
     function init(params) {
