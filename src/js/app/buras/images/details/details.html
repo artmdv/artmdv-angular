@@ -7,5 +7,7 @@
             </a>
         </div>
     </div>
+    <h5 class="text-center text-muted">Tags: <a class="text-muted" ng-repeat="tag in image.Image.Tags" href="images/{{tag}}"><span class="tab-space">{{tag}}</span></a></h5>
+    <h4 ng-if="image.Image.Date">Acquisition date(s): {{image.Image.Date}}</h4>
     <h4 class="text-center">{{image.Image.Description}}</h4>
 </div>
