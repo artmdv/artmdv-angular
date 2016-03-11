@@ -9,7 +9,7 @@
 
     <img ng-src="{{image.links.ThumbnailContent}}" alt="image.Image.Title" class="img-thumbnail center-block"/>
     <h4 class="text-center">{{image.Image.Description}}</h4>
-    <form method="post" ng-submit="updateImage()" class="form-horizontal">
+    <form method="put" enctype="multipart/form-data" ng-submit="updateImage()" class="form-horizontal">
         <fieldset>
             <legend>Image edit</legend>
             <div class="form-group">
@@ -33,7 +33,7 @@
             <div class="form-group">
                 <label for="password" class="col-lg-2">Password</label>
                 <div class="col-lg-10">
-                    <input class="form-control" type="password" name="password" id="password" ng-model="image.password" placeholder="Password"/>
+                    <input class="form-control" type="password" name="password" id="password" ng-model="password" placeholder="Password"/>
                 </div>
             </div>
             <div class="form-group">

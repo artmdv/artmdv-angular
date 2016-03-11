@@ -6,7 +6,6 @@ angular.module('buras')
 function adminController($scope, apiService, $sce) {
     var vm = $scope;
     vm.apiAddress = $sce.trustAsResourceUrl('http://[[API_CONNECTION_STRING]]/v2/Images');
-    var responseData;
 
     var successCallback = function(data){
         vm.responseData = data;
@@ -26,5 +25,4 @@ function adminController($scope, apiService, $sce) {
 
     vm.uploadImage = uploadImage;
     vm.model = model;
-    vm.responseData = responseData;
 }

@@ -13,8 +13,8 @@ function editImageController($scope, $routeParams, apiService) {
         vm.image = image;
     };
 
-    var updateImage = function(image){
-        apiService.put('v2/Images', image, successCallback);
+    var updateImage = function(){
+        apiService.put('v2/Images', {"image": vm.image.Image, "password": vm.password}, successCallback);
     };
 
     var successCallback = function(data){

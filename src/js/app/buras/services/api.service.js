@@ -38,7 +38,7 @@ function apiService($http, Upload, $timeout){
     };
 
     var put = function(endpoint, dto, success){
-        $http.put(endpoint, dto).then(function(response){success(response.data); });
+        $http.put(baseAddres + endpoint, dto).then(function(response){success(response.data); });
     };
 
     return {
