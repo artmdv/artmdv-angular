@@ -34,12 +34,11 @@ function apiService($http, Upload, $timeout){
             $timeout(function () {
                 success(response.data);
             });
-        }
-        //    , function (response) {
-        //    if (response.status > 0)
-        //        $scope.errorMsg = response.status + ': ' + response.data;
-        //}
-        );
+        });
+    };
+
+    var put = function(endpoint, dto, success){
+        $http.put(endpoint, dto).then(function(response){success(response.data); });
     };
 
     return {
@@ -47,6 +46,7 @@ function apiService($http, Upload, $timeout){
         model: model,
         modelList: modelList,
         post: post,
-        get: get
+        get: get,
+        put: put
     };
 }
