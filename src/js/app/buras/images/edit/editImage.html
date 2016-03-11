@@ -1,0 +1,40 @@
+<div class="container" ng-controller="editImageController as editImage">
+    <h2 class="text-center">{{image.Image.Title}}</h2>
+
+    <img ng-src="{{image.links.ThumbnailContent}}" alt="image.Image.Title" class="img-thumbnail center-block"/>
+    <h4 class="text-center">{{image.Image.Description}}</h4>
+    <form method="put" enctype="multipart/form-data" ng-submit="updateImage()" class="form-horizontal">
+        <fieldset>
+            <legend>Image edit</legend>
+            <div class="form-group">
+                <label for="title" class="col-lg-2">Title</label>
+                <div class="col-lg-10">
+                    <input class="form-control" type="text" name="title" id="title" ng-model="image.Image.Title" placeholder="Title"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description" class="col-lg-2">Description</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" rows="3" name="description" id="description" ng-model="image.Image.Description" placeholder="Description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tags" class="col-lg-2">Tags</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" rows="3" name="tags" id="tags" ng-model="image.Image.Tags" placeholder="Tags"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-lg-2">Password</label>
+                <div class="col-lg-10">
+                    <input class="form-control" type="password" name="password" id="password" ng-model="password" placeholder="Password"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <input type="submit" class="btn btn-primary" value="Submit" />
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

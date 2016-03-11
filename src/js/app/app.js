@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'ngFileUpload'])
+angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'ngFileUpload', 'ngclipboard'])
     .config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
@@ -14,6 +14,10 @@ angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'ngFileUpload'])
             .when('/images/:tag/:id', {
                 templateUrl: 'js/buras/images/details/details.html',
                 controller: 'detailsController'
+            })
+            .when('/images/:tag/:id/edit', {
+                templateUrl: 'js/buras/images/edit/editImage.html',
+                controller: 'editImageController'
             })
             .when('/about', {
                 templateUrl: 'js/buras/about/about.html',

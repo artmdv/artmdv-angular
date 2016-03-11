@@ -1,9 +1,9 @@
 "use strict";
 
 angular.module('buras')
-    .controller('detailsController', detailsController);
+    .controller('editImageController', editImageController);
 
-function detailsController($scope, $routeParams, apiService) {
+function editImageController($scope, $routeParams, apiService) {
     var vm = $scope;
     var getImage = function(id){
         vm.image = apiService.get('v2/Images/' + id, setImage);
@@ -11,6 +11,14 @@ function detailsController($scope, $routeParams, apiService) {
 
     var setImage = function(image){
         vm.image = image;
+    };
+
+    var updateImage = function(){
+        apiService.put('v2/Images', {"image": vm.image.Image, "password": vm.password}, successCallback);
+    };
+
+    var successCallback = function(data){
+        vm.image.Image = data;
     };
 
     function init(params) {
@@ -21,4 +29,6 @@ function detailsController($scope, $routeParams, apiService) {
     }
 
     init($routeParams);
+
+    vm.updateImage = updateImage;
 }
