@@ -41,12 +41,17 @@ function apiService($http, Upload, $timeout){
         $http.put(baseAddres + endpoint, dto).then(function(response){success(response.data); });
     };
 
+    var del = function(endpoint, dto, success){
+        $http.delete(baseAddres + endpoint, dto).then(function(response){success(response.data); });
+    };
+
     return {
         apList: apList,
         model: model,
         modelList: modelList,
         post: post,
         get: get,
-        put: put
+        put: put,
+        delete: del
     };
 }
