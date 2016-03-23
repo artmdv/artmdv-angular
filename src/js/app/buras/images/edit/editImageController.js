@@ -14,6 +14,10 @@ function editImageController($scope, $routeParams, apiService) {
     };
 
     var updateImage = function(){
+        if (!(vm.image.Image.Tags instanceof Array)) {
+            vm.image.Image.Tags = vm.image.Image.Tags.split(",");
+        }
+
         apiService.put('v2/Images', {"image": vm.image.Image, "password": vm.password}, successCallback);
     };
 
