@@ -2,9 +2,9 @@
     <h2 class="text-center">{{tag | uppercase}}</h2>
     <div ng-repeat="image in images">
         <div class="col-md-3">
-            <h4>{{image.Image.Title}}</h4>
-            <a href="images/{{tag}}/{{image.Image.Id}}">
-                <img ng-src="{{image.links.ThumbnailContent}}" class="img-thumbnail" alt="{{image.Image.Title}}">
+            <h4>{{image.image.title}}</h4>
+            <a href="images/{{tag}}/{{image.image.id}}">
+                <img ng-src="{{image.links.thumbnailContent}}" class="img-thumbnail" alt="{{image.image.title}}">
             </a>
         </div>
     </div>

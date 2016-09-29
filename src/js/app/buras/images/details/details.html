@@ -1,13 +1,13 @@
 <div class="container">
-    <h2 class="text-center">{{image.Image.Title}}</h2>
+    <h2 class="text-center">{{image.image.title}}</h2>
     <div class="row">
-        <div ng-mouseover="showAnnotated = image.links.AnnotationContent" ng-mouseleave="showAnnotated = false" class="col-md-10 col-md-offset-1">
-            <a href="{{image.links.ImageContent}}">
-                <img ng-src="{{!showAnnotated && image.links.ImageContent || image.links.AnnotationContent}}" alt="{{image.Image.Title}}" class="img-responsive center-block">
+        <div ng-mouseover="showAnnotated = image.links.annotationContent" ng-mouseleave="showAnnotated = false" class="col-md-10 col-md-offset-1">
+            <a href="{{image.links.imageContent}}">
+                <img ng-src="{{!showAnnotated && image.links.imageContent || image.links.annotationContent}}" alt="{{image.image.title}}" class="img-responsive center-block">
             </a>
         </div>
     </div>
-    <h5 class="text-center text-muted">Tags: <a class="text-muted" ng-repeat="tag in image.Image.Tags" href="images/{{tag}}"><span class="tab-space">{{tag}}</span></a></h5>
-    <dl class="dl-horizontal" ng-if="image.Image.Date"><dt>Acquisition date(s):</dt><dd> {{image.Image.Date}}</dd></dl>
-    <pre>{{image.Image.Description}}</pre>
+    <h5 class="text-center text-muted">Tags: <a class="text-muted" ng-repeat="tag in image.image.tags" href="images/{{tag}}"><span class="tab-space">{{tag}}</span></a></h5>
+    <dl class="dl-horizontal" ng-if="image.image.date"><dt>Acquisition date(s):</dt><dd> {{image.image.date}}</dd></dl>
+    <pre>{{image.image.description}}</pre>
 </div>

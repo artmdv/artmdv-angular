@@ -14,15 +14,15 @@ function editImageController($scope, $routeParams, apiService) {
     };
 
     var updateImage = function(){
-        if (!(vm.image.Image.Tags instanceof Array)) {
-            vm.image.Image.Tags = vm.image.Image.Tags.split(",");
+        if (!(vm.image.image.tags instanceof Array)) {
+            vm.image.image.tags = vm.image.image.tags.split(",");
         }
 
-        apiService.put('v2/Images', {"image": vm.image.Image, "password": vm.password}, successCallback);
+        apiService.put('v2/Images', {"image": vm.image.image, "password": vm.password}, successCallback);
     };
 
     var deleteImage = function(){
-        apiService.delete('v2/Images/' + vm.image.Image.Id + '/' + vm.password, null, deleteCallback);
+        apiService.delete('v2/Images/' + vm.image.image.id + '/' + vm.password, null, deleteCallback);
     };
 
     var deleteCallback = function(data){
