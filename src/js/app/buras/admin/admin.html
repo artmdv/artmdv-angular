@@ -3,12 +3,12 @@
 
     <div ng-show="responseData">
         <div>
-            <a href="images/image/{{responseData.Image.Id}}/edit">
-                <img ng-src="{{responseData.links.ThumbnailContent}}"/>
+            <a href="images/image/{{responseData.image.id}}/edit">
+                <img ng-src="{{responseData.links.thumbnailContent}}"/>
             </a>
         </div>
         <div>
-            <a class="btn btn-default btn-sm" href="#" ngclipboard data-clipboard-text="{{responseData.ForumPost}}">
+            <a class="btn btn-default btn-sm" href="#" ngclipboard data-clipboard-text="{{responseData.forumPost}}">
                 <i class="fa fa-clipboard"></i>
                 Copy Albireo Forum code
             </a>
