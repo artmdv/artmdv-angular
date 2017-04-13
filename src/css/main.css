@@ -5,3 +5,7 @@ span.tab-space
 .pre-alike {
     white-space: pre-wrap;
 }
+
+.nav-link, .nav-item {
+    outline: 0 !important;
+}
