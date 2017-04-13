@@ -7,11 +7,11 @@
   "description": "Artūras Medvedevas personal web",
   "private": true,
   "dependencies": {
-    "angular": "^1.2.24",
-    "angular-route": "~1.4.1",
-    "angular-mocks": "^1.2.26",
-    "angular-cookies": "^1.2.24",
-    "angular-resource": "^1.4.8",
+    "angular": "^1.6.4",
+    "angular-route": "~1.6.4",
+    "angular-mocks": "^1.6.4",
+    "angular-cookies": "^1.6.4",
+    "angular-resource": "^1.6.4",
     "ngGallery-buras": "",
     "ng-file-upload": "~12.0.1",
     "bootstrap": "~3.3.6",
@@ -20,6 +20,6 @@
     "ngclipboard": "^1.1.1"
   },
   "resolutions": {
-    "angular": "^1.2.24"
+    "angular": "^1.6.4"
   }
 }
