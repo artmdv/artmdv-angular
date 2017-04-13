@@ -1,11 +1,24 @@
 <div class="container">
     <h2 class="text-center">{{image.image.title}}</h2>
     <div class="row">
-        <div ng-mouseover="showAnnotated = image.links.annotationContent" ng-mouseleave="showAnnotated = false" class="col-md-10 col-md-offset-1">
-            <a href="{{image.links.imageContent}}">
-                <img ng-src="{{!showAnnotated && image.links.imageContent || image.links.annotationContent}}" alt="{{image.image.title}}" class="img-responsive center-block">
-            </a>
-        </div>
+        <uib-tabset active="Image">
+            <uib-tab index="0" heading="Image">
+                <a href="{{image.links.imageContent}}">
+                    <img ng-src="{{image.links.imageContent}}" alt="{{image.image.title}}" class="img-responsive center-block">
+                </a>
+            </uib-tab>
+            <uib-tab index="1" heading="Annotated" disable="!image.links.annotationContent">
+                <a href="{{image.links.annotationContent}}">
+                    <img ng-src="{{image.links.annotationContent}}" alt="{{image.image.title}}" class="img-responsive center-block">
+                </a>
+            </uib-tab>
+            <uib-tab index="2" heading="Inverted"  disable="!image.links.invertedContent">
+                <a href="{{image.links.invertedContent}}">
+                    <img ng-src="{{image.links.invertedContent}}" alt="{{image.image.title}}" class="img-responsive center-block">
+                </a>
+            </uib-tab>
+        </uib-tabset>
+
     </div>
     <h5 class="text-center text-muted">Tags: <a class="text-muted" ng-repeat="tag in image.image.tags" href="images/{{tag}}"><span class="tab-space">{{tag}}</span></a></h5>
     <dl class="dl-horizontal" ng-if="image.image.date"><dt>Acquisition date(s):</dt><dd> {{image.image.date}}</dd></dl>

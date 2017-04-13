@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'ngFileUpload', 'ngclipboard'])
+angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'ngFileUpload', 'ngclipboard', 'ui.bootstrap'])
     .config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
