@@ -2,3 +2,6 @@ span.tab-space
 {
     padding-left: 0.5em;
 }
+.pre-alike {
+    white-space: pre-wrap;
+}

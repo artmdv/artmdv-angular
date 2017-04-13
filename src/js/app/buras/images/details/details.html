@@ -9,5 +9,7 @@
     </div>
     <h5 class="text-center text-muted">Tags: <a class="text-muted" ng-repeat="tag in image.image.tags" href="images/{{tag}}"><span class="tab-space">{{tag}}</span></a></h5>
     <dl class="dl-horizontal" ng-if="image.image.date"><dt>Acquisition date(s):</dt><dd> {{image.image.date}}</dd></dl>
-    <pre>{{image.image.description}}</pre>
+
+    <div class="well pre-alike">{{image.image.description}}</div>
+
 </div>
