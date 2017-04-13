@@ -1,7 +1,7 @@
 <div class="container">
     <h2 class="text-center">{{image.image.title}}</h2>
     <div class="row">
-        <uib-tabset active="Image">
+        <uib-tabset active="Image" type="pills">
             <uib-tab index="0" heading="Image">
                 <a href="{{image.links.imageContent}}">
                     <img ng-src="{{image.links.imageContent}}" alt="{{image.image.title}}" class="img-responsive center-block">
