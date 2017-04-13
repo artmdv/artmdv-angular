@@ -336,7 +336,7 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('production', function() {
-    return runSeq('clean','compileHard','templates', 'css', 'images', 'fonts', 'sass', 'lintTC', 'plato', 'testBuild');
+    return runSeq('clean','compileHard','templates', 'css', 'images', 'fonts', 'sass', 'lintTC', 'plato');
 });
 
 
