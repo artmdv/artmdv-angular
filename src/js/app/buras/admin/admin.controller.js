@@ -21,6 +21,7 @@ function adminController($scope, apiService, $sce) {
         description: "",
         tags: "",
         annotation: "",
+        inverted: "",
         password: ""
     };
 
