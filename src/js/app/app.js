@@ -27,6 +27,9 @@ angular.module('buras', ['ngRoute', 'templates', 'ngResource', 'ngFileUpload', '
                 templateUrl: 'js/buras/admin/admin.html',
                 controller: 'adminController'
             })
+            .when('/publications', {
+                templateUrl: 'js/buras/publications/publications.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });
