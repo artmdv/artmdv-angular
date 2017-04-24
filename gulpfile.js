@@ -336,10 +336,10 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('production', function() {
-    return runSeq('clean','compileHard','templates', 'css', 'images', 'fonts', 'sass', 'lintTC', 'plato', 'testBuild');
+    return runSeq('clean','compileHard','templates', 'css', 'images', 'fonts', 'sass', 'lintTC', 'plato');
 });
 
 
 gulp.task('default',['watch'], function() {
-    return runSeq('clean','compileSoft','templates','css', 'images', 'fonts', 'sass', 'connect', 'lint', 'test');
+    return runSeq('clean','compileSoft','templates','css', 'images', 'fonts', 'sass', 'connect', 'lint');
 });
