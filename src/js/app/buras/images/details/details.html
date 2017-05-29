@@ -3,8 +3,11 @@
     <div class="row">
         <uib-tabset active="Image" type="pills">
             <uib-tab index="0" heading="Image">
-                <a href="{{image.links.imageContent}}">
+                <a href="{{image.links.imageContent}}" ng-if="!image.links.revisions || image.links.revisions.length == 0">
                     <img ng-src="{{image.links.imageContent}}" alt="{{image.image.title}}" class="img-responsive center-block">
+                </a>
+                <a href="{{image.links.imageContent}}" ng-if="image.links.revisions.length != 0">
+                    <img ng-src="{{image.links.revisions[image.links.revisions.length-1].image}}" alt="{{image.image.title}}" class="img-responsive center-block">
                 </a>
             </uib-tab>
             <uib-tab index="1" heading="Annotated" disable="!image.links.annotationContent">
@@ -16,6 +19,24 @@
                 <a href="{{image.links.invertedContent}}">
                     <img ng-src="{{image.links.invertedContent}}" alt="{{image.image.title}}" class="img-responsive center-block">
                 </a>
+            </uib-tab>
+            <uib-tab index="3" heading="Revisions"  disable="image.links.revisions.length == 0">
+                <div class="container">
+                    <div class="col-md-3">
+                        <h4>Original</h4>
+                        <a href="{{image.links.imageContent}}">
+                            <img ng-src="{{image.links.thumbnailContent}}" alt="{{image.image.title}}" class="img-thumbnail">
+                        </a>
+                    </div>
+                    <div ng-repeat="revision in image.links.revisions">
+                        <div class="col-md-3">
+                            <h4>Rev. {{revision.date}}</h4>
+                            <a href="{{revision.image}}">
+                                <img ng-src="{{revision.thumb}}" alt="{{image.image.title}}" class="img-thumbnail">
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </uib-tab>
         </uib-tabset>
 

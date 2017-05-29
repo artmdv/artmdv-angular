@@ -1,0 +1,50 @@
+<div class="container">
+    <h2 class="text-center">{{image.image.title}}</h2>
+
+    <legend>Original</legend>
+    <a href="images/{{tag}}/{{image.image.id}}">
+        <img ng-src="{{image.links.thumbnailContent}}" alt="image.image.title" class="img-thumbnail center-block"/>
+    </a>
+
+    <legend>Revisions</legend>
+    <div ng-repeat="revision in image.links.revisions">
+        <a href="{{revision.image}}">
+            <img ng-src="{{revision.thumb}}" alt="image.image.title" class="img-thumbnail center-block"/>
+        </a>
+    </div>
+
+    <h4 class="text-center">{{image.image.description}}</h4>
+    <form method="put" enctype="multipart/form-data" ng-submit="updateImage()" class="form-horizontal">
+        <fieldset>
+            <legend>Image revision</legend>
+            <div class="form-group">
+                <label for="file" class="col-lg-2">File</label>
+                <div class="col-lg-10">
+                    <input class="form-control" type="file" name="file" ngf-select ng-model="model.file" enctype="multipart/form-data" id="file"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description" class="col-lg-2">Description</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" rows="3" name="description" id="description" ng-model="model.description" placeholder="Description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10">
+                    <input class="form-control" type="hidden" name="imageId" ngf-select ng-model="model.imageId" enctype="multipart/form-data" id="imageId"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-lg-2">Password</label>
+                <div class="col-lg-10">
+                    <input class="form-control" type="password" name="password" id="password" ng-model="model.password" placeholder="Password"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <input type="submit" class="btn btn-primary" value="Submit" />
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
