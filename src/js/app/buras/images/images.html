@@ -4,7 +4,8 @@
         <div class="col-md-3">
             <h4>{{image.image.title}}</h4>
             <a href="images/{{tag}}/{{image.image.id}}">
-                <img ng-src="{{image.links.thumbnailContent}}" class="img-thumbnail" alt="{{image.image.title}}">
+                <img ng-src="{{image.links.thumbnailContent}}" class="img-thumbnail" alt="{{image.image.title}}" ng-if="image.links.revisions.length == 0">
+                <img ng-src="{{image.links.revisions[image.links.revisions.length-1].thumb}}" class="img-thumbnail" alt="{{image.image.title}}"  ng-if="image.links.revisions.length != 0">
             </a>
         </div>
     </div>
