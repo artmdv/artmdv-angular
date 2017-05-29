@@ -3,7 +3,7 @@
     <div class="row">
         <uib-tabset active="Image" type="pills">
             <uib-tab index="0" heading="Image">
-                <a href="{{image.links.imageContent}}" ng-if="image.links.revisions.length == 0">
+                <a href="{{image.links.imageContent}}" ng-if="!image.links.revisions || image.links.revisions.length == 0">
                     <img ng-src="{{image.links.imageContent}}" alt="{{image.image.title}}" class="img-responsive center-block">
                 </a>
                 <a href="{{image.links.imageContent}}" ng-if="image.links.revisions.length != 0">
@@ -20,7 +20,7 @@
                     <img ng-src="{{image.links.invertedContent}}" alt="{{image.image.title}}" class="img-responsive center-block">
                 </a>
             </uib-tab>
-            <uib-tab index="3" heading="Revisions"  disable="image.links.revisions.length == 0">
+            <uib-tab index="3" heading="Revisions"  disable="!image.links.revisions && image.links.revisions.length == 0">
                 <div class="container">
                     <div class="col-md-3">
                         <h4>Original</h4>
