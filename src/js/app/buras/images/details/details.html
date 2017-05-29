@@ -43,7 +43,10 @@
     </div>
     <h5 class="text-center text-muted">Tags: <a class="text-muted" ng-repeat="tag in image.image.tags" href="images/{{tag}}"><span class="tab-space">{{tag}}</span></a></h5>
     <dl class="dl-horizontal" ng-if="image.image.date"><dt>Acquisition date(s):</dt><dd> {{image.image.date}}</dd></dl>
-
+    <legend ng-if="image.links.revisions.length != 0">Original description</legend>
     <div class="well pre-alike">{{image.image.description}}</div>
-
+    <div ng-repeat="revision in image.links.revisions">
+        <legend>Rev. {{revision.date}} description</legend>
+        <div class="well pre-alike">{{revision.description}}</div>
+    </div>
 </div>
