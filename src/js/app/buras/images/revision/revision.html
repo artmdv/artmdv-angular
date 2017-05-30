@@ -7,12 +7,18 @@
     </a>
 
     <legend>Revisions</legend>
-    <div ng-repeat="revision in image.links.revisions">
-        <a href="{{revision.image}}">
-            <img ng-src="{{revision.thumb}}" alt="image.image.title" class="img-thumbnail center-block"/>
-        </a>
+    <div class="container">
+        <div ng-repeat="revision in image.links.revisions">
+            <div class="col-lg-3">
+                <a href="{{revision.image}}">
+                    <img ng-src="{{revision.thumb}}" alt="image.image.title" class="img-thumbnail center-block"/>
+                </a>
+                <input type="button" class="btn btn-default" value="Delete" ng-click="deleteRevision(revision.id)"/>
+            </div>
+        </div>
     </div>
 
+    <legend>Description</legend>
     <h4 class="text-center">{{image.image.description}}</h4>
     <form method="put" enctype="multipart/form-data" ng-submit="updateImage()" class="form-horizontal">
         <fieldset>

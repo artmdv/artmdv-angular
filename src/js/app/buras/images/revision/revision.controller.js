@@ -21,12 +21,12 @@ function revisionImageController($scope, $routeParams, apiService) {
         apiService.post('v2/Images/Revision', model, successCallback);
     };
 
-    var deleteRevision = function(){
-        apiService.delete('v2/Images/Revision/' + vm.image.image.id + '/' + vm.password, null, deleteCallback);
+    var deleteRevision = function(revisionId){
+        apiService.delete('v2/Images/' + vm.image.image.id + '/revision/' + revisionId + '/' + model.password, null, deleteCallback);
     };
 
-    var deleteCallback = function(data){
-
+    var deleteCallback = function(){
+        getImage(vm.image.image.id);
     };
 
     var successCallback = function(data){
