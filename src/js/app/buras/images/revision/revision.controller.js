@@ -29,8 +29,8 @@ function revisionImageController($scope, $routeParams, apiService) {
         getImage(vm.image.image.id);
     };
 
-    var successCallback = function(data){
-        vm.image.Image = data;
+    var successCallback = function(){
+        getImage(vm.image.image.id);
     };
 
     function init(params) {

@@ -6,7 +6,7 @@
                 <a href="{{image.links.imageContent}}" ng-if="!image.links.revisions || image.links.revisions.length == 0">
                     <img ng-src="{{image.links.imageContent}}" alt="{{image.image.title}}" class="img-responsive center-block">
                 </a>
-                <a href="{{image.links.imageContent}}" ng-if="image.links.revisions.length != 0">
+                <a href="{{image.links.revisions[image.links.revisions.length-1].image}}" ng-if="image.links.revisions.length != 0">
                     <img ng-src="{{image.links.revisions[image.links.revisions.length-1].image}}" alt="{{image.image.title}}" class="img-responsive center-block">
                 </a>
             </uib-tab>
