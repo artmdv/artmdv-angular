@@ -25,6 +25,10 @@ function editImageController($scope, $routeParams, apiService) {
         apiService.delete('v2/Images/' + vm.image.image.id + '/' + vm.password, null, deleteCallback);
     };
 
+    var featuredImage = function(){
+        apiService.post('v2/Images/Featured/' + vm.image.image.id + '/' + vm.password, null, deleteCallback);
+    };
+
     var deleteCallback = function(data){
 
     };
@@ -44,4 +48,5 @@ function editImageController($scope, $routeParams, apiService) {
 
     vm.updateImage = updateImage;
     vm.deleteImage = deleteImage;
+    vm.featuredImage = featuredImage;
 }

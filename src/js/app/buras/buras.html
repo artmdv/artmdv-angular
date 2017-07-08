@@ -3,7 +3,15 @@
         <p>Hi! I'm <strong>Artūras Medvedevas</strong></p>
         <p>This is my personal <em>SPACE</em> :)</p>
     </h2>
+    <br/>
+    <br/>
+    <h3 class="text-center">Featured image</h3>
     <div class="col-md-8 col-md-offset-2">
-        <img src="images/scope.jpg" class="img-responsive" alt="" height="400px"/>
+        <a href="images/featured/{{image.image.id}}" ng-if="!image.links.revisions || image.links.revisions.length == 0">
+            <img ng-src="{{image.links.imageContent}}" alt="{{image.image.title}}" class="img-responsive center-block">
+        </a>
+        <a href="images/featured/{{image.image.id}}" ng-if="image.links.revisions.length != 0">
+            <img ng-src="{{image.links.revisions[image.links.revisions.length-1].image}}" alt="{{image.image.title}}" class="img-responsive center-block">
+        </a>
     </div>
 </div>
