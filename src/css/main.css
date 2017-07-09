@@ -9,3 +9,7 @@ span.tab-space
 .nav-link, .nav-item {
     outline: 0 !important;
 }
+
+.footer {
+    background-color:inherit !important;
+}
