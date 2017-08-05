@@ -33,7 +33,7 @@ function adminController($scope, apiService, $sce) {
         file: "",
         title: "",
         description: "",
-        tags: "",
+        tags: today,
         annotation: "",
         inverted: "",
         password: "",
