@@ -13,3 +13,7 @@ span.tab-space
 .footer {
     background-color:inherit !important;
 }
+
+.main-page {
+    margin-bottom: 60px;
+}
