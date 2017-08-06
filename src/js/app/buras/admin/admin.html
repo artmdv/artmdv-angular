@@ -1,20 +1,15 @@
-<div ng-controller="adminController as admin" class="container">
+<div ng-controller="adminController as admin" class="container" ng-paste="paste($event)">
     <h2>Administration</h2>
 
     <div ng-show="responseData">
         <div>
-            <a href="images/image/{{responseData.image.id}}/edit">
+            <a href="images/image/{{responseData.image.id}}">
                 <img ng-src="{{responseData.links.thumbnailContent}}"/>
-            </a>
-        </div>
-        <div>
-            <a class="btn btn-default btn-sm" href="#" ngclipboard data-clipboard-text="{{responseData.forumPost}}">
-                <i class="fa fa-clipboard"></i>
-                Copy Albireo Forum code
             </a>
         </div>
     </div>
 
+    <div class="h3" id="Status">Status: {{uploadStatus}}</div>
 
     <form method="post" enctype="multipart/form-data" ng-submit="uploadImage()" class="form-horizontal">
         <fieldset>

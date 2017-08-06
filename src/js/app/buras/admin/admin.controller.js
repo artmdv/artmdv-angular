@@ -8,11 +8,17 @@ function adminController($scope, apiService, $sce) {
     vm.apiAddress = $sce.trustAsResourceUrl('http://[[API_CONNECTION_STRING]]/v2/Images');
 
     var successCallback = function(data){
+        vm.uploadStatus = "Success";
         vm.responseData = data;
     };
 
+    var errorCallback = function(data){
+        vm.uploadStatus = "Error";
+    };
+
     var uploadImage = function(){
-        apiService.post('v2/Images', model, successCallback);
+        vm.uploadStatus = "Uploading..";
+        apiService.post('v2/Images', model, successCallback, errorCallback);
     };
     var today = new Date();
     var dd = today.getDate();
@@ -38,6 +44,17 @@ function adminController($scope, apiService, $sce) {
         inverted: "",
         password: "",
         date: today
+    };
+
+    vm.paste = function (event) {
+        var clipData = event.clipboardData;
+        angular.forEach(clipData.items, function (item, key) {
+            if (clipData.items[key].type.match(/image.*/)) {
+                var img = clipData.items[key].getAsFile();
+                model.file = img;
+                uploadImage();
+            }
+        });
     };
 
     vm.uploadImage = uploadImage;
