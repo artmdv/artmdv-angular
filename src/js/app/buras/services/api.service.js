@@ -23,7 +23,7 @@ function apiService($http, Upload, $timeout){
         $http.get(baseAddres + endpoint).then(function(response){success(response.data); });
     }
 
-    var post = function(endpoint, dto, success)
+    var post = function(endpoint, dto, success, error)
     {
         var upload = Upload.upload({
             url: baseAddres + endpoint,
@@ -34,6 +34,9 @@ function apiService($http, Upload, $timeout){
             $timeout(function () {
                 success(response.data);
             });
+        },
+        function (response){
+            error(response.data);
         });
     };
 
